@@ -13,7 +13,6 @@ class Solution:
         borders = left + right
         borders.sort()
         k=0
-        longest = 0
         for n in range(0,len(borders)-1,2):
             longest = max(borders[n+1]- borders[n],longest)
         print(borders)
