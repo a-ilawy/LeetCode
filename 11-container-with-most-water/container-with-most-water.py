@@ -6,10 +6,16 @@ class Solution:
         right= len(heights)-1
         maximumAmountOfWater=1
         while left < right:
-            w =right - left
+            w = abs(right - left)
             h = min(heights[right],heights[left])
             maximumAmountOfWater = max(h*w,maximumAmountOfWater)
-            if heights[left] < heights[right]:
-                left +=1
-            else: right -=1
+            # if heights[left] < heights[right]:
+            #     left +=1
+            # else: right -=1
+            if heights[left] == h:
+                while left < right and heights[left] <= h:
+                    left += 1
+            if heights[right] == h:
+                while left < right and heights[right] <= h:
+                    right -= 1
         return maximumAmountOfWater
