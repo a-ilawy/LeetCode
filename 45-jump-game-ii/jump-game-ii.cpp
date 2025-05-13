@@ -1,12 +1,12 @@
 class Solution {
 public:
     int jump(vector<int>& nums) {
-         if (nums.size() == 1) {
-        return 0;
-    }
-    if (nums.size() == 2 && nums[0] >= 1) {
-        return 1;
-    }
+    //      if (nums.size() == 1) {
+    //     return 0;
+    // }
+    // if (nums.size() == 2 && nums[0] >= 1) {
+    //     return 1;
+    // }
 
     int jumpSteps = 0;
     int goalIndex = nums.size() - 1;
