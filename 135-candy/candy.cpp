@@ -15,7 +15,7 @@ public:
         }
         int totalCandy=0;
         for(int i=0; i<n;i++){
-            cout<<res[i]<<",";
+          
             totalCandy+=res[i];
         }
         return totalCandy;
