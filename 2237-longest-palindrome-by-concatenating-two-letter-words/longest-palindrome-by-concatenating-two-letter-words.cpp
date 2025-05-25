@@ -14,9 +14,7 @@ public:
         }
        }
        for(auto v : m){
-        cout<<v.first<<",";
-        cout<<v.second<<",";
-        if(v.second==1 && v.first[0]==v.first[1]){
+        if(v.second>0 && v.first[0]==v.first[1]){
             res+=2;
             break;
         }
