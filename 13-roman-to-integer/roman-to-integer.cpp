@@ -27,7 +27,6 @@ public:
             if (i > 0) {
                 int nextValue = romanSymbolToValue(s[i - 1]);
                 if (currValue > nextValue) {
-                    cout<<currValue<<" , "<<nextValue<<endl;
                     res += currValue - nextValue;
                     i--;
                 } else {
