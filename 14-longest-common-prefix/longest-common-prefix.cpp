@@ -4,18 +4,15 @@ public:
         int minLen = strs[0].length();
         int idx = 0;
         for(int i=0;i<strs.size();i++){
-            int currLen = strs[i].length();
-            // cout<<currLen<<" , "<<minLen<<endl;
-            if(currLen <= minLen){
-                minLen = currLen;
+            if(strs[i].length() <= minLen){
+                minLen = strs[i].length();
                 idx = i;
             }
         }
         string prefix = strs[idx];
-        for(int i=0;i<strs.size();i++){
+        for(auto currStr : strs){
            
-           if(i!=idx){
-            string currStr = strs[i];
+           if(currStr!=prefix){
             int pIdx = 0;
             for(int j=0; j<prefix.length(); j++){
                 // cout<<currStr<<" , "<<prefix<<endl;
