@@ -12,7 +12,7 @@ public:
             }
             if(l==n) return true;
             while (r > 0 && !isalnum(static_cast<unsigned char>(s[r]))) r--;
-            cout<<tolower(s[l])<<" = "<<tolower(s[r])<<endl;
+          
             if(tolower(s[l]) != tolower(s[r])) return false;
             else{
                 l++;
