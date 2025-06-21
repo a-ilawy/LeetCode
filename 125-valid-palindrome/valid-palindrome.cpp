@@ -25,13 +25,13 @@ public:
 
             while (left < right) {
                 // Skip non-alphanumeric characters from the left
-                while (left < right && !std::isalnum(s[left])) left++;
+                while (left < right && !isalnum(s[left])) left++;
 
                 // Skip non-alphanumeric characters from the right
-                while (left < right && !std::isalnum(s[right])) right--;
+                while (left < right && !isalnum(s[right])) right--;
 
                 // Compare characters case-insensitively
-                if (std::tolower(s[left]) != std::tolower(s[right])) {
+                if (tolower(s[left]) !=tolower(s[right])) {
                     return false;
                 }
 
