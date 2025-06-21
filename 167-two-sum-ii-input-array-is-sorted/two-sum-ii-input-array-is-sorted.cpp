@@ -4,7 +4,7 @@ public:
         int l=0;
         int r = numbers.size()-1;
         while(l<r){
-            cout<<numbers[l]<<" , "<<numbers[r]<<endl;
+           
             if(numbers[l]+numbers[r] > target){
                 r--;
             }else if (numbers[l]+numbers[r] == target){
