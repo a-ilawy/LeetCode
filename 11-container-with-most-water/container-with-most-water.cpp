@@ -4,10 +4,10 @@ public:
         int left = 0;
         int right=height.size()-1;
         int maximumAmountOfWater = 0;
-
+        int h=0, w=0;
         while(left < right){
-            int w = abs(left - right);
-            int h = min(height[left], height[right]);
+            w = abs(left - right);
+            h = min(height[left], height[right]);
 
             maximumAmountOfWater = max(maximumAmountOfWater, h*w);
 
