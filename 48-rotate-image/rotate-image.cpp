@@ -36,9 +36,7 @@ public:
 
             
         }
-       for(int i=0; i<res.size(); i++){
-        cout<<res[i]<<" , ";
-       }
+
        int ct=0, n = res.size();
         rowBegin = 0, rowEnd = matrix.size() - 1, colBegin = 0,
             colEnd = matrix[0].size() - 1;
