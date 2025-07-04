@@ -13,7 +13,7 @@ public:
             }
           
             s+=newPart;
-            cout<<newPart<<" --> "<<s<<endl;
+          
             size = s.length();
         }
         return s[k-1];
