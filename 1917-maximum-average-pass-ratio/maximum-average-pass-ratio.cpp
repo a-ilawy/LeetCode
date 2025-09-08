@@ -5,8 +5,8 @@ public:
         int n = classes.size();
         
         for(int i=0;i<n;i++){
-            double diff = (double)(classes[i][0]+1)/(double)(classes[i][1]+1) -
-                          (double)(classes[i][0])/(double)(classes[i][1]);
+            double diff = (double)(classes[i][0]+1)/(classes[i][1]+1) -
+                          (double)(classes[i][0])/(classes[i][1]);
             pq.push({diff, i});
         }
 
@@ -18,8 +18,8 @@ public:
             classes[indx][0]++;
             classes[indx][1]++;
 
-            double diff = (double)(classes[indx][0]+1)/(double)(classes[indx][1]+1) -
-                        (double)(classes[indx][0])/(double)(classes[indx][1]);
+            double diff = (double)(classes[indx][0]+1)/(classes[indx][1]+1) -
+                        (double)(classes[indx][0])/(classes[indx][1]);
             pq.push({diff, indx});
         }
        
