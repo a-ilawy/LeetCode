@@ -10,13 +10,13 @@ public:
         int maxConsonantFreq=0;
         unordered_map<char, int> mp;
 
-        for(auto c : s){
-            if (isVowel(c)){
-                mp[c]++;
-                maxVowelFreq = max(maxVowelFreq,mp[c]);
+        for(int i=0;i<s.size();i++){
+            if (isVowel(s[i])){
+                mp[s[i]]++;
+                maxVowelFreq = max(maxVowelFreq,mp[s[i]]);
             }else{
-                mp[c]++;
-                maxConsonantFreq = max(maxConsonantFreq,mp[c]);
+                mp[s[i]]++;
+                maxConsonantFreq = max(maxConsonantFreq,mp[s[i]]);
             }
         }
 
