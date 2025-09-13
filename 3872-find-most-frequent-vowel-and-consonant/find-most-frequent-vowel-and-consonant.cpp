@@ -6,25 +6,18 @@ public:
         return false;
     }
     int maxFreqSum(string s) {
-        unordered_map<char, int> vowelM;
-        unordered_map<char, int> consonantM;
+        int maxVowelFreq=0;
+        int maxConsonantFreq=0;
+        unordered_map<char, int> mp;
 
         for(auto c : s){
             if (isVowel(c)){
-                vowelM[c]++;
+                mp[c]++;
+                maxVowelFreq = max(maxVowelFreq,mp[c]);
             }else{
-                consonantM[c]++;
+                mp[c]++;
+                maxConsonantFreq = max(maxConsonantFreq,mp[c]);
             }
-        }
-
-        int maxVowelFreq=0;
-        for(auto m : vowelM){
-        maxVowelFreq = max(maxVowelFreq,m.second);
-        }
-
-        int maxConsonantFreq=0;
-        for(auto m : consonantM){
-        maxConsonantFreq = max(maxConsonantFreq,m.second);
         }
 
         return maxConsonantFreq + maxVowelFreq;
