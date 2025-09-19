@@ -3,13 +3,13 @@ public:
 
     unordered_map<string, int> cells;
     Spreadsheet(int rows) {
-        char columnName = 'A';
-        for(int i=0; i<rows; i++){
-            string cell;
-            cell += char(columnName + i);
-            cell += to_string(i);
-            cells[cell] = 0;
-        }
+        // char columnName = 'A';
+        // for(int i=0; i<rows; i++){
+        //     string cell;
+        //     cell += char(columnName + i);
+        //     cell += to_string(i);
+        //     cells[cell] = 0;
+        // }
     }
     
     void setCell(string cell, int value) {
