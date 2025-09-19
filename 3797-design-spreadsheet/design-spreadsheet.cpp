@@ -21,16 +21,20 @@ public:
     }
     
     int getValue(string formula) {
-        formula = formula.substr(1);
-        for (int i = 0; i < formula.size(); i++) {
-            if (formula[i] == '+') {
-                string s1 = formula.substr(0, i), s2 = formula.substr(i + 1);
-                int left = s1[0] >= 'A' && s1[0] <= 'Z' ? cells[s1] : stoi(s1);
-                int right = s2[0] >= 'A' && s2[0] <= 'Z' ? cells[s2] : stoi(s2);
-                return left + right;
-            }
-        }
-        return 0;
+       formula = formula.substr(1);
+
+        // split by '+'
+        size_t pos = formula.find('+');
+        string leftOperand = formula.substr(0, pos);
+        string rightOperand = formula.substr(pos + 1);
+
+        auto eval = [&](const string& op) {
+            if (!op.empty() && isdigit(op[0]))
+                return stoi(op);
+            return cells.count(op) ? cells[op] : 0;
+        };
+
+        return eval(leftOperand) + eval(rightOperand);
     }
 };
 
