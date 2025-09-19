@@ -22,23 +22,16 @@ public:
     }
     
     int getValue(string formula) {
-        // Remove the '=' at the beginning
-        formula = formula.substr(1); // remove '='
-
-        size_t plusPos = formula.find('+');
-
-        string left = formula.substr(0, plusPos);
-        string right = formula.substr(plusPos + 1);
-
-        // Helper lambda to check if the string is a number
-        auto isNumber = [](const string& s) {
-            return !s.empty() && all_of(s.begin(), s.end(), ::isdigit);
-        };
-
-        int leftValue = isNumber(left) ? stoi(left) : cells[left];
-        int rightValue = isNumber(right) ? stoi(right) : cells[right];
-
-        return leftValue + rightValue;
+            formula = formula.substr(1);
+        for (int i = 0; i < formula.size(); i++) {
+            if (formula[i] == '+') {
+                string s1 = formula.substr(0, i), s2 = formula.substr(i + 1);
+                int left = s1[0] >= 'A' && s1[0] <= 'Z' ? cells[s1] : stoi(s1);
+                int right = s2[0] >= 'A' && s2[0] <= 'Z' ? cells[s2] : stoi(s2);
+                return left + right;
+            }
+        }
+        return 0;
     }
 };
 
