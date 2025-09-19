@@ -9,7 +9,6 @@ public:
             cell += char(columnName + i);
             cell += to_string(i);
             cells[cell] = 0;
-            cout << cell << endl;
         }
     }
     
@@ -22,7 +21,7 @@ public:
     }
     
     int getValue(string formula) {
-            formula = formula.substr(1);
+        formula = formula.substr(1);
         for (int i = 0; i < formula.size(); i++) {
             if (formula[i] == '+') {
                 string s1 = formula.substr(0, i), s2 = formula.substr(i + 1);
