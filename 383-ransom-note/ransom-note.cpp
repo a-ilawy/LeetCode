@@ -14,7 +14,9 @@ public:
         }
         for(int i=0;i<ransomNote.length();i++){
              char ch=ransomNote[i];
-             if(mp[ch]==0)return false; 
+             if(mp[ch]==0){
+                return false; 
+             }
              mp[ch]--;
         }
         return true;
