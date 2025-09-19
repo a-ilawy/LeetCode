@@ -8,10 +8,14 @@ public:
         // for(int i=0;i<ransomNote.length();i++) if (mp[ransomNote[i]]!=0) return false;
         // return true;
 
-        for(int i=0;i<magazine.length();i++) mp[magazine[i]]++;
+        for(int i=0;i<magazine.length();i++){
+             char ch=magazine[i];
+             mp[ch]++;
+        }
         for(int i=0;i<ransomNote.length();i++){
-             if(mp[ransomNote[i]]==0)return false; 
-             mp[ransomNote[i]]--;
+             char ch=ransomNote[i];
+             if(mp[ch]==0)return false; 
+             mp[ch]--;
         }
         return true;
 
