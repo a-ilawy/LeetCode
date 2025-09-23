@@ -9,26 +9,21 @@ public:
     // }
     int maxFrequencyElements(vector<int>& nums) {
         uint8_t freq[101] = {0};
+        uint8_t largeFreq =0;
+        uint8_t cnt = largeFreq;
+
         for(int i=0; i< nums.size(); i++){
-            freq[nums[i]]++;
+             freq[nums[i]]++;
+             uint8_t f = freq[nums[i]];
+             if(f > largeFreq){
+                largeFreq = f;
+                cnt = f;
+             }else if (f == largeFreq){
+                 cnt += f;
+             }
            
         }
-
-        uint8_t largeFreq = freq[0];
-        uint8_t indx = 0;
-        for(int i=0; i< 101; i++){
-            if(freq[i] > largeFreq){
-                largeFreq = freq[i];
-                indx=i;
-            }
-        }
         
-        uint8_t cnt = largeFreq;
-        for(int i=0; i< 101; i++){
-            if( i != indx && freq[i] == largeFreq) {
-                cnt +=freq[i];
-            }
-        }
         return cnt;
     }
 };
